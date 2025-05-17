@@ -5,19 +5,15 @@ module top_main_tb;
     reg tx_start;
     wire tx;
     wire tx_done;
-    wire baud_clk;
     wire rx;
     wire rx_done;
-    wire [7:0] syndrome;
     wire [7:0] message;
-    wire [15:0] corrected_codeword;
 
     // DUT
     top_main uut (
         .clk(clk), .rst(rst), .m(m), .tx_start(tx_start),
-        .tx(tx), .tx_done(tx_done), .baud_clk(baud_clk),
-        .rx(rx), .rx_done(rx_done), .syndrome(syndrome),
-        .message(message), .corrected_codeword(corrected_codeword)
+        .tx(tx), .tx_done(tx_done), .rx(rx), .rx_done(rx_done), 
+        .message(message)
     );
 
     // Loopback
