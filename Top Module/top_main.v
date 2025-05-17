@@ -2,24 +2,23 @@ module top_main (
     input clk,
     input rst,
     input [7:0] m,
-    output reg [15:0] c,
     input tx_start,
     output reg tx,
     output reg tx_done,
-    output reg baud_clk,
     input rx,
     output reg rx_done,
-    output reg [7:0] syndrome,
-    output [7:0] message,
-    output reg [15:0] corrected_codeword,
-    output reg [4:0] count,
-    output reg [15:0] temp_data
+    output [7:0] message
 );
-    reg [7:0] temp_message; 
+    //reg [7:0] temp_message; 
+    reg [7:0] syndrome;
+    reg baud_clk;
+    reg [15:0] c;
+    reg [4:0] count;
     reg [4:0] count_tx;
     reg [13:0] cnt;
     wire temp_clk;
-
+    reg [15:0] temp_data;
+    reg [15:0] corrected_codeword;
     always @(posedge clk or posedge rst) begin
         if (rst) begin
             cnt <= 0;
