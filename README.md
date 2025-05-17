@@ -91,7 +91,7 @@ H[7] = 0111001100000001
 
 ## 📌 Notes
 
-- Baud rate is derived assuming a 50 MHz system clock and 4800 baud rate (10415 cycles).
+- Baud rate is derived assuming a 100 MHz system clock and 9600 baud rate (10415 cycles).
 - The module performs decoding only after full codeword reception.
 - This design assumes ideal input and no metastability handling (suitable for simulation or tightly controlled hardware environments).
 
